@@ -446,7 +446,7 @@ h6, .h6 {
 }
 
 .display-3 {
-  font-size: 4.5rem;
+  font-size: 3.8rem;
   font-weight: 300;
   line-height: 1.2;
 }
@@ -9487,7 +9487,9 @@ button.bg-dark:focus {
 
 .text-lowercase {
   text-transform: lowercase !important;
-}
+} 
+
+
 
 .text-uppercase {
   text-transform: uppercase !important;

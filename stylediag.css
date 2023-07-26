@@ -1,12 +1,22 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Handlee", cursive;
     box-sizing: border-box;
 }
 
 body {
-    background: #138496;
+    background-image: url('files/imgbg.jpg');
+    /* Set background image size */
+    background-size: auto; /* Other values can be 'contain', '100% auto', etc. */
+    /* Set background image position */
+    background-position: center; /* Other values can be 'top', 'left', 'bottom', 'right', etc. */
+    /* Set background image repeat */
+    background-repeat: no-repeat; /* Other values can be 'repeat', 'repeat-x', 'repeat-y', etc. */
+    /* Set background color as a fallback in case the image is not available or fails to load */
+    background-color: #f0f0f0; /* Choose a suitable background color */
+    /* Set other body styles (optional) */
+    height: 800px;
 }
 
 .app{

@@ -3,9 +3,9 @@ const pertanyaan = [
         id:1,
         soal:"1.Pilihlah gambar dibawah ini sesuai dengan hatimu",
         jawaban: [
-            {pilihan:"files/header.png",nilai: "v"},
-            {pilihan:"files/header.png",nilai: "a"},
-            {pilihan:"files/header.png",nilai: "k"},
+            {pilihan:"files/gbr1.jpg",nilai: "v"},
+            {pilihan:"files/gbr2.png",nilai: "a"},
+            {pilihan:"files/gbr3.jpg",nilai: "k"},
         ]
     },{
         id:2,
@@ -157,6 +157,7 @@ function changeHeaderText() {
     titleElement.textContent = "Isi Biodata";
     const pertanyaanElement = document.getElementById("pertanyaan");
     pertanyaanElement.textContent = "Isi biodata berikut";
+    pertanyaanElement.style.marginBottom = "30px";
 }
   
 
@@ -235,6 +236,7 @@ function replaceButtonsWithForms() {
     formKelas.appendChild(divKelas);
     divKelas.appendChild(labelKelas);
     divKelas.appendChild(inputKelas);
+    
     tombolJawabanElement.appendChild(formKelas);
 
 }
@@ -245,7 +247,7 @@ function mulai(){
     score = [];
     selectedValue = "";
     elementnext.innerHTML="Selanjutnya";
-    titleElement.innerHTML="Pertanyaan Analisis"
+    titleElement.innerHTML="Pilih Yang Paling Sesuai Dengan Kamu"
     tampilsoal();
 }
 
@@ -261,8 +263,8 @@ function tampilsoal(){
         // Check if the jawaban contains an image link
         if (soalsekarang.id == 1) {
           image.src = jawaban.pilihan; // Set the image source
-          image.style.maxHeight = "150px";
-          image.style.maxWidth = "150px";
+          image.style.Height = "150px";
+          image.style.maxWidth = "200px";
           image.style
         //   image.dataset.nilai = jawaban.nilai;
           button.appendChild(image); // Append the image to the button
