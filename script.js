@@ -26,12 +26,12 @@ const pertanyaan = [
         ]
     },
     {
-        id:2,
+        id:1,
         soal:"4. Kemampuan yang bisa dan paling saya sukai adalah...",
         jawaban: [
-            {pilihan:"A. Menggambar, melukis, atau mewarnai",nilai: "v"},
-            {pilihan:"B. Bernyanyi atau bermain alat musik",nilai: "a"},
-            {pilihan:"C. Menari dan beladiri",nilai: "k"},
+            {pilihan:"files/gbr4.jpg",nilai: "v"},
+            {pilihan:"files/gbr5.jpg",nilai: "a"},
+            {pilihan:"files/gbr6.png",nilai: "k"},
         ]
     },
     {
@@ -96,6 +96,7 @@ const elementnext = document.getElementById("tombolnext");
 const elementkembali = document.getElementById("tombolhome");
 const elementbutton = document.getElementsByClassName("btn");
 const titleElement = document.getElementById("judulutama");
+const bodynya = document.getElementById("bodycontainer");
 let idxsoalsekarang = 0;
 let score = [];
 let selectedValue = "";
@@ -158,6 +159,15 @@ function changeHeaderText() {
     const pertanyaanElement = document.getElementById("pertanyaan");
     pertanyaanElement.textContent = "Isi biodata berikut";
     pertanyaanElement.style.marginBottom = "30px";
+    const diagnostiknya = document.getElementById("diagnostiknya");
+    const imageTag = diagnostiknya.querySelector("img");
+    if (imageTag) {
+        diagnostiknya.removeChild(imageTag);
+    }
+    if (bodynya.classList.contains("app2")) {
+        bodynya.classList.remove("app2");
+        bodynya.classList.add("app");
+    }
 }
   
 
@@ -355,7 +365,38 @@ function tampilhasil(){
     }
     console.log(totalnilaiakhir);
     console.log(gayabelajar);
-    elementsoal.innerHTML = `Hai ${namaValue} yang kelas ${kelasValue}, Gaya belajar anda adalah ${gayabelajar} `;
+    titleElement.textContent = "Hasil Diagnostik";
+    titleElement.style.borderBottom ="1px solid #003c46";
+    titleElement.style.paddingBottom = "30px";
+    
+    const gambar = document.createElement("img");
+    elementsoal.style.textAlign = "center";
+    elementsoal.style.padding = "10px";
+    if (gayabelajar == "audio"){
+        gambar.src = "files/gbr2.png";
+        elementsoal.innerHTML = `Hai ${namaValue} (kelas ${kelasValue}), Gaya belajarmu adalah Auditori.
+        Gaya belajar Auditori (Auditory Learners) mengandalkan pada pendengaran untuk bisa memahami dan mengingatnya. Karakteristik model belajar seperti ini benar-benar menempatkan pendengaran sebagai alat utama menyerap informasi atau pengetahuan. Artinya, kita harus mendengar, baru kemudian kita bisa mengingat dan memahami informasi itu. Karakter pertama orang yang memiliki gaya belajar ini adalah semua informasi hanya bisa diserap melalui pendengaran, kedua memiliki kesulitan untuk menyerap informasi dalam bentuk tulisan secara langsung, ketiga memiliki kesulitan menulis ataupun membaca.`;
+    }else if(gayabelajar == "visual"){
+        gambar.src = "files/gbr2.png";
+        elementsoal.innerHTML = `Hai ${namaValue} yang kelas ${kelasValue}, Gaya belajar anda 2 adalah ${gayabelajar} `;
+    }else if(gayabelajar == "kinestetik"){
+        gambar.src = "files/gbr2.png";
+        elementsoal.innerHTML = `Hai ${namaValue} yang kelas ${kelasValue}, Gaya belajar anda 3 adalah ${gayabelajar} `;
+    }
+    const elemetndiag = document.getElementById("diagnostiknya");
+    // const elementteksdiag = document.getElementById("teksdiag");
+    
+    if (bodynya.classList.contains("app")) {
+        bodynya.classList.remove("app");
+        bodynya.classList.add("app2");
+    }
+    elementsoal.style.fontSize="16px";
+    gambar.style.height = "400px";
+    gambar.maxWidth ="90%";
+    gambar.style.display = "block"; // Set display to block
+    gambar.style.marginLeft = "auto"; // Set left margin to auto
+    gambar.style.marginRight = "auto"; 
+    elemetndiag.appendChild(gambar);
     elementnext.innerHTML = "Ulangi";
     elementnext.style.display = "block";
     elementkembali.style.display = "block";

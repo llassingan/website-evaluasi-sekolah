@@ -16,7 +16,9 @@ body {
     /* Set background color as a fallback in case the image is not available or fails to load */
     background-color: #f0f0f0; /* Choose a suitable background color */
     /* Set other body styles (optional) */
-    height: 800px;
+    
+    height: 1100px;
+    padding-bottom: 50px;
 }
 
 .app{
@@ -28,6 +30,16 @@ body {
     padding: 30px;
     
 } 
+
+
+.app2 {
+    background: #fff;
+    height: 90%;
+    max-width:  900px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
 
 .app h1{
     font-size: 25px;
