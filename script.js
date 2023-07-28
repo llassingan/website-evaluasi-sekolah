@@ -4,7 +4,7 @@ const pertanyaan = [
         soal:"1.Pilihlah gambar dibawah ini sesuai dengan hatimu",
         jawaban: [
             {pilihan:"files/gbr1.jpg",nilai: "v"},
-            {pilihan:"files/gbr2.png",nilai: "a"},
+            {pilihan:"files/gbr2.jpg",nilai: "a"},
             {pilihan:"files/gbr3.jpg",nilai: "k"},
         ]
     },{
@@ -370,18 +370,58 @@ function tampilhasil(){
     titleElement.style.paddingBottom = "30px";
     
     const gambar = document.createElement("img");
-    elementsoal.style.textAlign = "center";
+    elementsoal.style.textAlign = "justify";
     elementsoal.style.padding = "10px";
     if (gayabelajar == "audio"){
-        gambar.src = "files/gbr2.png";
-        elementsoal.innerHTML = `Hai ${namaValue} (kelas ${kelasValue}), Gaya belajarmu adalah Auditori.
-        Gaya belajar Auditori (Auditory Learners) mengandalkan pada pendengaran untuk bisa memahami dan mengingatnya. Karakteristik model belajar seperti ini benar-benar menempatkan pendengaran sebagai alat utama menyerap informasi atau pengetahuan. Artinya, kita harus mendengar, baru kemudian kita bisa mengingat dan memahami informasi itu. Karakter pertama orang yang memiliki gaya belajar ini adalah semua informasi hanya bisa diserap melalui pendengaran, kedua memiliki kesulitan untuk menyerap informasi dalam bentuk tulisan secara langsung, ketiga memiliki kesulitan menulis ataupun membaca.`;
+        gambar.src = "files/aud.png";
+        elementsoal.innerHTML = `Selamat, ${namaValue}! Gaya belajarmu adalah Auditori.
+        <i>Gaya belajar adalah cara di mana kita belajar dan memahami informasi dengan lebih baik. Ada tiga jenis gaya belajar yaitu: auditory, audio visual, dan kinestetik.</i>
+        Gaya belajar kamu adalah audio visual. Gaya belajar audio visual adalah ketika kita belajar dengan melihat dan mendengar informasi sekaligus. Jadi, jika kamu memiliki gaya belajar ini, kamu akan lebih suka belajar melalui gambar, video, atau presentasi yang disertai suara atau penjelasan.
+        Kamu dapat belajar maksimal dengan mengikuti beberapa contoh aktivitas belajar untuk gaya belajar audio visual dibawah ini:
+        <br>
+        <ul>
+            <br><li>Menonton video pembelajaran yang menunjukkan cara melakukan sesuatu.
+            </li><br>
+            <li>Melihat gambar atau diagram dalam buku pelajaran.    
+            </li><br>
+            <li>Menonton film pendidikan atau presentasi yang menarik.
+            </li><br>
+        <ul/>
+        Ingat, tidak ada gaya belajar yang lebih baik dari yang lain, dan kita semua bisa menggunakan kombinasi dari ketiga gaya belajar ini. Yang terpenting adalah kita menemukan cara belajar yang paling cocok untuk diri kita masing-masing agar bisa belajar dengan lebih baik dan menyenangkan. Jadi, mari kita jelajahi dan temukan gaya belajar kita bersama-sama!
+        `;
     }else if(gayabelajar == "visual"){
-        gambar.src = "files/gbr2.png";
-        elementsoal.innerHTML = `Hai ${namaValue} yang kelas ${kelasValue}, Gaya belajar anda 2 adalah ${gayabelajar} `;
+        gambar.src = "files/vis.png";
+        elementsoal.innerHTML = `Selamat, ${namaValue}! Gaya belajar kamu adalah Audio Visual.
+        <i>Gaya belajar adalah cara di mana kita belajar dan memahami informasi dengan lebih baik. Ada tiga jenis gaya belajar yaitu: auditory, audio visual, dan kinestetik.</i>
+        Gaya belajar kamu adalah auditory. Gaya belajar auditory adalah ketika kita belajar dengan lebih baik melalui pendengaran atau suara. Jadi, jika kamu adalah seorang anak dengan gaya belajar ini, kamu akan lebih menyukai belajar dengan mendengarkan penjelasan dari guru atau mendengarkan rekaman suara yang menjelaskan pelajaran. Kamu juga mungkin senang mendengarkan cerita atau membaca dengan suara keras.
+        Kamu dapat belajar maksimal dengan mengikuti beberapa contoh aktivitas belajar untuk gaya belajar auditory dibawah ini:<br>
+        <ul>
+        <br><li>Mendengarkan guru menyampaikan pelajaran di kelas.
+            </li><br>
+            <li>Mendengarkan rekaman bunyi atau ceramah tentang topik tertentu.
+            </li><br>
+            <li>Berpartisipasi dalam permainan tebak kata atau kuis suara.
+            </li><br>
+        <ul/>
+        Ingat, tidak ada gaya belajar yang lebih baik dari yang lain, dan kita semua bisa menggunakan kombinasi dari ketiga gaya belajar ini. Yang terpenting adalah kita menemukan cara belajar yang paling cocok untuk diri kita masing-masing agar bisa belajar dengan lebih baik dan menyenangkan. Jadi, mari kita jelajahi dan temukan gaya belajar kita bersama-sama!
+        `;
     }else if(gayabelajar == "kinestetik"){
-        gambar.src = "files/gbr2.png";
-        elementsoal.innerHTML = `Hai ${namaValue} yang kelas ${kelasValue}, Gaya belajar anda 3 adalah ${gayabelajar} `;
+        gambar.src = "files/kine.png";
+        elementsoal.innerHTML = `Selamat, ${namaValue}! Gaya belajarmu adalah Kinestetik.
+        <i>Gaya belajar adalah cara di mana kita belajar dan memahami informasi dengan lebih baik. Ada tiga jenis gaya belajar yaitu: auditory, audio visual, dan kinestetik.</i>
+        Gaya belajar kamu adalah kinestetik. Gaya belajar kinestetik adalah ketika kita belajar dengan lebih baik melalui gerakan dan sentuhan. Jadi, jika kamu adalah seorang anak dengan gaya belajar ini, kamu akan lebih suka belajar sambil bergerak atau menggunakan tanganmu.
+        Kamu dapat belajar maksimal dengan mengikuti beberapa contoh aktivitas belajar untuk gaya belajar kinestetik dibawah ini:
+        <br>
+        <ul>
+            <br><li>Menggunakan benda-benda fisik, seperti blok atau puzzle, untuk memahami konsep matematika.  
+            </li><br>
+            <li>Belajar dengan bermain peran atau melakukan simulasi di kelas.    
+            </li><br>
+            <li>Mengerjakan eksperimen atau kegiatan praktik dalam ilmu pengetahuan.
+            </li><br>
+        <ul/>
+        Ingat, tidak ada gaya belajar yang lebih baik dari yang lain, dan kita semua bisa menggunakan kombinasi dari ketiga gaya belajar ini. Yang terpenting adalah kita menemukan cara belajar yang paling cocok untuk diri kita masing-masing agar bisa belajar dengan lebih baik dan menyenangkan. Jadi, mari kita jelajahi dan temukan gaya belajar kita bersama-sama!
+        `;
     }
     const elemetndiag = document.getElementById("diagnostiknya");
     // const elementteksdiag = document.getElementById("teksdiag");
@@ -391,7 +431,7 @@ function tampilhasil(){
         bodynya.classList.add("app2");
     }
     elementsoal.style.fontSize="16px";
-    gambar.style.height = "400px";
+    gambar.style.height = "300px";
     gambar.maxWidth ="90%";
     gambar.style.display = "block"; // Set display to block
     gambar.style.marginLeft = "auto"; // Set left margin to auto
